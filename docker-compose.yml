@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    command:
+      [ "bash", "-c", "rm -f tmp/pids/server.pid; RAILS_ENV=development bundle exec rails s -b 0.0.0.0" ]
+    volumes:
+      - .:/todo
+      - bundle:/usr/local/bundle
+    depends_on:
+      - db
+  db:
+    image: postgres:10.1
+    ports:
+      - "5432:5432"
+    environment:
+      - "POTSGRES_USER=todo_app"
+      - "POTSGRES_PASSWORD=password1234"
+    volumes:
+      - datavol:/var/lib/postgresql/data
+volumes:
+  bundle:
+  datavol:
