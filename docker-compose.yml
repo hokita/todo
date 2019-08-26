@@ -13,12 +13,12 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:10.1
+    image: postgres:11.4
     ports:
       - "5432:5432"
     environment:
-      - "POTSGRES_USER=todo_app"
-      - "POTSGRES_PASSWORD=password1234"
+      - "POSTGRES_USER=todo_app"
+      - "POSTGRES_PASSWORD=password1234"
     volumes:
       - datavol:/var/lib/postgresql/data
 volumes:
