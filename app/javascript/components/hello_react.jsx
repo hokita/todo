@@ -5,13 +5,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import Helloo from '../javascripts/hello'
 
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <div>
+    <div>Hello {props.name}!</div>
+    <Helloo />
+  </div>
 )
 
 Hello.defaultProps = {
-  name: 'David'
+  name: ''
 }
 
 Hello.propTypes = {
