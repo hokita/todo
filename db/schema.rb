@@ -16,17 +16,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_020841) do
   enable_extension "plpgsql"
 
   create_table "tasks", force: :cascade do |t|
-    t.string "content", null: false
-    t.string "status", limit: 1, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "nickname", limit: 50, null: false
-    t.string "password_digest", null: false
-    t.string "authority", limit: 1, null: false
-    t.string "status", limit: 1, null: false
+    t.string "content", null: false, comment: "タスク内容"
+    t.integer "status", null: false, comment: "タスクステータス"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

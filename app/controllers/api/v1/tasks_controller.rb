@@ -5,14 +5,14 @@ module Api
     # todoのリストを操作するコントローラー
     class TasksController < ApplicationController
       def index
-        render json: { hoge: 'hoge' },
+        render json: Task.all,
                status: :ok
       end
 
       def create
         task = Task.new(task_params)
         if task.save
-          render json: { hoge: 'hoge' },
+          render json: task,
                  status: :created
         else
           render json: { error: 'Failed to creation.' },
@@ -23,7 +23,7 @@ module Api
       private
 
       def task_params
-        params.fetch(:task, {})
+        params.fetch(:task, {}).permit(:content)
       end
     end
   end

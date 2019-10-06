@@ -31,14 +31,26 @@ gem 'react-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# state管理
+gem 'state_machines-activerecord'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
+  # pry
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+
   # rspec
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
+
+  # spring
+  gem 'spring-commands-rspec', require: false
 end
 
 group :development do
@@ -51,6 +63,12 @@ group :development do
 
   # rubocop
   gem 'rubocop', require: false
+
+  # brakeman
+  gem 'brakeman'
+
+  # rails-best-practice
+  gem 'rails_best_practices'
 end
 
 group :test do
