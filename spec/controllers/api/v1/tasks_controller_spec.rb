@@ -28,7 +28,7 @@ describe Api::V1::TasksController do
           .and_return(false)
       end
 
-      it 'create task' do
+      it 'return error messge' do
         params = { task: { content: 'test_content' } }
         post :create, params: params
         target = { error: 'Failed to creation.' }.to_json
