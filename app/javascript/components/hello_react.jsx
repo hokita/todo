@@ -6,10 +6,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Helloo from '../javascripts/hello'
+import Style from './hello_react.scss'
 
 const Hello = props => (
   <div>
-    <div>Hello {props.name}!</div>
+    <div className={Style.hoge}>Hello {props.name}!</div>
     <Helloo />
   </div>
 )
