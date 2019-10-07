@@ -2,9 +2,11 @@ AllCops:
   TargetRubyVersion: 2.6
   Exclude:
     - 'Gemfile'
+    - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
+    - 'node_modules/**/*'
 
 Style/AsciiComments:
   Enabled: false
