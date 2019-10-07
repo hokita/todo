@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "tasks/show", type: :view do
+RSpec.xdescribe "tasks/show", type: :view do
   before(:each) do
     @task = assign(:task, Task.create!())
   end
