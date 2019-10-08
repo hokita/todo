@@ -1,6 +1,9 @@
 {
   "name": "todo",
   "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 6006"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/actioncable": "^6.0.0-alpha",
@@ -16,6 +19,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@storybook/react": "^5.2.3",
     "webpack-dev-server": "^3.8.0"
   }
 }
