@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-# Tasks controller (root)
+# Tasks controller
 class TasksController < ApplicationController
-  def index
-    @tasks = Task.all
-  end
+  # root
+  def index; end
 end
