@@ -69,10 +69,10 @@ export default class TodoListPage extends React.Component {
     return (
       <div className={style.container}>
         <h1>Todo</h1>
-          <TodoList
-            todos={this.state.todos}
-            checkTodo={this.checkTodo}
-          />
+        <TodoList
+          todos={this.state.todos}
+          checkTodo={this.checkTodo}
+        />
       </div>
     )
   }
