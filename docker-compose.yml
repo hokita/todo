@@ -5,9 +5,8 @@ services:
     build: .
     ports:
       - "3000:3000"
-      - "3001:6006"
     command:
-      [ "bash", "-c", "rm -f tmp/pids/server.pid; RAILS_ENV=development bundle exec rails s -b 0.0.0.0" ]
+      bash -c "rm -f tmp/pids/server.pid; RAILS_ENV=development bundle exec rails s -b 0.0.0.0"
     volumes:
       - .:/todo
       - bundle:/usr/local/bundle
@@ -22,6 +21,24 @@ services:
       - "POSTGRES_PASSWORD=password1234"
     volumes:
       - datavol:/var/lib/postgresql/data
+  # dev only from here
+  storybook:
+    build: .
+    ports:
+      - "6006:6006"
+    command:
+      yarn storybook --quiet
+    volumes:
+      - .:/todo
+      - bundle:/usr/local/bundle
+  openapi:
+    image: swaggerapi/swagger-ui
+    volumes:
+      - ./openapi/sample.yaml:/usr/share/nginx/html/sample.yaml
+    environment:
+      API_URL: sample.yaml
+    ports:
+      - "8080:8080"
 volumes:
   bundle:
   datavol:
