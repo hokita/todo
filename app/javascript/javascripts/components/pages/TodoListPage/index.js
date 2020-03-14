@@ -1,19 +1,16 @@
 import React from 'react'
 import styles from './styles.scss'
+import Checkbox from '../../molecules/Checkbox'
 
 const TodoItem = (props) => {
   return (
     <li key={props.todo.id} className={styles.chk_box}>
       <label>
-        <input type="checkbox"
-          name="checkbox01[]"
-          className={styles.checkbox01_input}
-          checked={props.todo.isDone}
-          onChange={() => props.checkTodo(props.todo)}
-        />
-        <span className={styles.checkbox01_parts}>
+        <Checkbox
+          isChecked={props.todo.isDone}
+          onChange={ () => props.checkTodo(props.todo) }>
           {props.todo.title}
-        </span>
+        </Checkbox>
         <i className={"fas fa-pen " + styles.pen_button}></i>
         <i className={"fas fa-trash-alt " + styles.trash_button}></i>
       </label>

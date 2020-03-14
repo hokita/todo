@@ -165,46 +165,6 @@ body {
     ul {
       padding: 0;
       list-style: none;
-      li {
-        .checkbox01_input{
-          display: none;
-        }
-        .checkbox01_parts{
-          padding-left: 25px;
-          position: relative;
-          margin-right: 20px;
-        }
-        .checkbox01_parts::before{
-          content: "";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
-          width: 15px;
-          height: 15px;
-          border: 1px solid #999;
-          border-radius: 4px;
-        }
-        .checkbox01_input:checked + .checkbox01_parts{
-          color: #666;
-        }
-        .checkbox01_input:checked + .checkbox01_parts::after{
-          content: "";
-          display: block;
-          position: absolute;
-          top: -4px;
-          left: 4px;
-          bottom: 2px;
-          margin: auto;
-          width: 7px;
-          height: 14px;
-          transform: rotate(40deg);
-          border-bottom: 3px solid #666;
-          border-right: 3px solid #666;
-        }
-      }
 
       .chk_box {
         font-size: 1.2rem;
