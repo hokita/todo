@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.scss'
 import Checkbox from '../../molecules/Checkbox'
+import { PenIcon, TrashIcon } from '../../atoms/Icon'
 
 const TodoItem = (props) => {
   return (
@@ -11,8 +12,14 @@ const TodoItem = (props) => {
           onChange={ () => props.checkTodo(props.todo) }>
           {props.todo.title}
         </Checkbox>
-        <i className={"fas fa-pen " + styles.pen_button}></i>
-        <i className={"fas fa-trash-alt " + styles.trash_button}></i>
+        <PenIcon
+          className={ styles.pen_icon }
+          onClick={ () => {} }
+        />
+        <TrashIcon
+          className={ styles.trash_icon }
+          onClick={ () => {} }
+        />
       </label>
     </li>
   )
