@@ -1,48 +1,29 @@
 import React from 'react'
 import styles from './styles.scss'
-import Task from '../../organisms/Task'
+import TaskList from '../../organisms/TaskList'
 
-const TodoItem = (props) => {
-  return (
-    <li key={props.todo.id}>
-      <Task
-        title={ props.todo.title }
-        isChecked={ props.todo.isDone }
-        onChange={ () => props.checkTodo(props.todo) }
+const TodoList = (props) => (
+  <div className={styles.tasks_area}>
+    <div className={styles.ongoing_area}>
+      <h2>ongoing</h2>
+      <TaskList
+        tasks={ props.todos }
+        onChange={ (task) => props.checkTodo(task) }
         onClickPen={ () => {} }
         onClickTrash={ () => {} }
       />
-    </li>
-  )
-}
-
-const TodoList = (props) => {
-  const todos = props.todos.map(todo => {
-    return (
-      <TodoItem
-        key={todo.id}
-        todo={todo}
-        checkTodo={props.checkTodo}
-      />
-    )
-  })
-  return (
-    <div className={styles.tasks_area}>
-      <div className={styles.ongoing_area}>
-        <h2>ongoing</h2>
-        <ul>
-          {todos}
-        </ul>
-      </div>
-      <div className={styles.done_area}>
-        <h2>done</h2>
-        <ul>
-          {todos}
-        </ul>
-      </div>
     </div>
-  )
-}
+    <div className={styles.done_area}>
+      <h2>done</h2>
+      <TaskList
+        tasks={ props.todos }
+        onChange={ (task) => props.checkTodo(task) }
+        onClickPen={ () => {} }
+        onClickTrash={ () => {} }
+      />
+    </div>
+  </div>
+)
 
 export default class TodoListPage extends React.Component {
   constructor() {
