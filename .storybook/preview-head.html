@@ -1,3 +1,4 @@
+<style>
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -108,94 +109,10 @@ $todo_navy: #2f4780;
 // font
 @import url('https://fonts.googleapis.com/css?family=Oxanium&display=swap');
 
-// my css
+// original
 input[type="checkbox"] {
   display: none;
 }
-
-body {
-  font-size: 100%;
-  font-family: Verdana, sans-serif;
-}
-
-.container {
-  width: 100%;
-  margin: auto;
-
-  header {
-    background-color: $todo_navy;
-    text-align: center;
-    height: 64px;
-    padding: 16px;
-    box-sizing: border-box; // paddingに依存しないようにする
-    position: relative;
-    margin: 0 0 10px 0;
-
-    h1 {
-      display: inline-block;
-      font-family: 'Oxanium', cursive;
-      font-size: 2rem;
-      color: white;
-      // padding: 16px 0;
-    }
-
-    .add_button {
-      display: inline-block;
-      font-size: 3rem;
-      font-family: 'Oxanium', cursive;
-      position: absolute;
-      margin: auto;
-      top: 10px; // pxで中央寄せにしている
-      right: 10px;
-      color: white;
-      vertical-align: bottom;
-    }
-  }
-
-  .tasks_area {
-    padding: 0 10px;
-
-    h2 {
-      font-size: 1.4rem;
-      font-family: 'Oxanium', cursive;
-      font-weight: bold;
-      margin: 0 0 10px 0;
-    }
-
-    ul {
-      padding: 0;
-      list-style: none;
-    }
-
-    .ongoing_area {
-      padding: 10px;
-      margin: 0 0 10px 0;
-      border: 1px solid #ccc;
-      ul {
-        li {
-          &:last-child {
-            border: none;
-          } 
-        }
-      }
-    }
-
-    .done_area {
-      padding: 10px;
-      background-color: #eee;
-      ul {
-        li {
-          &:last-child {
-            border: none;
-          } 
-        }
-      }
-    }
-  }
-}
-
-.done {
-  text-decoration: line-through;
-  color: #ccc;
-}
-
+</style>
+<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">

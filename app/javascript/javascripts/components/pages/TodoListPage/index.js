@@ -1,26 +1,17 @@
 import React from 'react'
 import styles from './styles.scss'
-import Checkbox from '../../molecules/Checkbox'
-import { PenIcon, TrashIcon } from '../../atoms/Icon'
+import Task from '../../organisms/Task'
 
 const TodoItem = (props) => {
   return (
-    <li key={props.todo.id} className={styles.chk_box}>
-      <label>
-        <Checkbox
-          isChecked={props.todo.isDone}
-          onChange={ () => props.checkTodo(props.todo) }>
-          {props.todo.title}
-        </Checkbox>
-        <PenIcon
-          className={ styles.pen_icon }
-          onClick={ () => {} }
-        />
-        <TrashIcon
-          className={ styles.trash_icon }
-          onClick={ () => {} }
-        />
-      </label>
+    <li key={props.todo.id}>
+      <Task
+        title={ props.todo.title }
+        isChecked={ props.todo.isDone }
+        onChange={ () => props.checkTodo(props.todo) }
+        onClickPen={ () => {} }
+        onClickTrash={ () => {} }
+      />
     </li>
   )
 }
